@@ -1,14 +1,14 @@
 homePage = (req, res, next) => {
-    res.render('homepage')
+    res.render('homepage', {title: 'Homepage'})
 }
 
 aboutPage = (req, res, next) => {
-    res.render('aboutpage')
+    res.render('aboutpage', {title: 'About'})
 }
 
 
 installPage = (req, res, next) => {
-    res.render('installpage')
+    res.render('installpage', {title: 'Install Instructions'})
 }
 
 module.exports = {homePage, aboutPage, installPage}

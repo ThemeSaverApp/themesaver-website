@@ -1,5 +1,6 @@
 <% layout('boilerplate.ejs') %>
 
+
 <div class="container-fluid my-auto d-flex justify-content-center">
     
     <div class="row ">
@@ -57,7 +58,7 @@
 
                   <div class="row code">
                     <div class="col-11 d-flex justify-content-start align-items-center" >
-                       <code class='overflow-auto' id='copyLinkText'><%= rice.url %> </code>
+                       <code class='overflow-auto' id='copyLinkText'><%= rice.url %>:<%= rice.branch %> </code>
                     </div>
                     <div class="col-1 d-flex justify-content-end">
                         <button class="btn  btn-copy" id='copyLink'>

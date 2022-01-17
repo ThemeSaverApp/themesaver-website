@@ -10,7 +10,7 @@ const catchAsync = require('../utils/catchAsync');
 
 
 const newRicePage = (req, res, next) => {
-    res.render('newRice')
+    res.render('newRice', {title: 'Submit new rice'})
 }
 
 const createNewRice = catchAsync(async(req, res, next) => {
@@ -73,13 +73,13 @@ const createNewRice = catchAsync(async(req, res, next) => {
 
 const shopPage = catchAsync(async(req, res, next) => {
     const rices = await riceSchema.find({}).populate('user')
-    res.render('shoppage', {rices})
+    res.render('shoppage', {rices, title:'Shop'})
 })
 
 const riceDetails = catchAsync(async(req, res) => {
     const rice = await riceSchema.findOne({_id:req.params.id}).populate('user')
 	User = req.user
-    res.render('details', {rice, User})
+    res.render('details', {rice, User, title:`${rice.name}`})
 })
 
 const updateRice = catchAsync(async(req, res) => {
