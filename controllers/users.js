@@ -7,7 +7,7 @@ const GitHubStrategy = require('passport-github2').Strategy;
 passport.use(new GitHubStrategy({
     clientID: process.env.clientID,
     clientSecret: process.env.clientSecret,
-    callbackURL: "http://localhost:3001/auth/github/callback"
+    callbackURL: "https://themesaver.herokuapp.com/auth/github/callback"
   },
   async function(accessToken, refreshToken, profile, done) {
     const doesUserExit = await User.exists({ 'githubID':  profile.id});
