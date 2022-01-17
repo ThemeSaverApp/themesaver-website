@@ -47,7 +47,6 @@ app.set('view engine', 'ejs')
 app.engine('ejs', ejsMate)
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
-app.use(connectLiveReload());
 app.use(helmet({
     crossOriginEmbedderPolicy: false,
     crossOriginOpenerPolicy: false,
