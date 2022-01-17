@@ -21,19 +21,12 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local')
 const User = require('./models/user')
 
-const livereload = require("livereload");
-const connectLiveReload = require("connect-livereload");
-
 // Security Stuff
 const helmet = require("helmet");
 const mongoSanitize = require('express-mongo-sanitize');
 
 // Utils
 const expressError = require('./utils/catchAsync');
-
-// Setting up livereload
-const liveReloadServer = livereload.createServer({extraExts: ['ejs']}); 
-liveReloadServer.watch([__dirname + "/public", __dirname + "/views"]);
 
 dbUrl = process.env.dbUrl
 
