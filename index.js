@@ -120,6 +120,7 @@ app.use((err, req, res, next) => {
 })
 
 // Starting Express Server at port 3001
-app.listen(3001, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log('Listening At Port 3001')
 })
