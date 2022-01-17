@@ -1,0 +1,103 @@
+<% layout('boilerplate.ejs') %>
+
+<div class="container-fluid my-auto d-flex justify-content-center">
+    
+    <div class="row ">
+        
+        <div class="col-4 d-flex align-items-center mt-2">
+            
+                <a href="/shop" class="btn btn-submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg> Back</a>
+        </div>
+        <div class="col-12 mt-3">
+            <h1>
+                <%= rice.name %>
+                <% if (User && rice.user.githubID === User.id) { %>
+                    <form action="/shop/<%= rice._id %>?_method=patch" method="post" style='display:inline;'><button class="btn delete-btn">Update Rice</button></form>
+                    <form action="/shop/<%= rice._id %>?_method=delete" method="post" style='display:inline;'><button class="btn delete-btn">Delete Rice</button></form>
+              <% } %>
+            </h1>
+
+            <hr>
+        </div>
+        <div class="col-md-7 col-sm-12 ">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id='carousel'>  
+        
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12 align-items-center d-flex justify-content-center mb-sm-3 mb-md-0">
+            <div class="card h-100 w-100">
+                <div class="card-body">
+                  <h3>Rice Details:  
+                  </h3>
+                  <hr>
+                  <h5>Desktop Environment: <%= rice.desktopEnvironment %> </h5>
+                  <h5>Window Manager: <%= rice.windowManager %> </h5>
+                  <h5>Gtk Theme: <%= rice.gtkTheme %> </h5>
+                  <h5>Icon Theme: <%= rice.iconTheme %> </h5>
+                  <h5 class="text-muted mt-4">Submitted By: <a href="https://github.com/<%= rice.url %> " class="text-muted text-decoration-none"><%= rice.user.username %></a>  </h5>
+                  
+
+                  
+                  
+                  <h4 class="mt-5">Like The Rice ? Paste This Link In Theme Saver and Get it for yourself</h4>
+                  <hr>
+
+                  <div class="row code">
+                    <div class="col-11 d-flex justify-content-start align-items-center" >
+                       <code class='overflow-auto' id='copyUninstallText'><%= rice.url %> </code>
+                    </div>
+                    <div class="col-1 d-flex justify-content-end">
+                        <button class="btn  btn-copy" id='copyUninstall' onclick="copy(this.id)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                              </svg>
+                        </button>
+                    </div>
+                </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var rice = '<%- JSON.stringify(rice) %>';
+    var single = true;
+</script>
+
+<script>
+    const copy = (id) => {
+        
+        const btn = document.getElementById(id)
+        navigator.clipboard.writeText(document.getElementById(id+'Text').innerHTML);
+
+        const clipboardIcon = 
+        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>'
+        btn.innerHTML = clipboardIcon;
+        btn.classList.add('btn-copy-success');
+        btn.classList.remove('btn-copy');
+        setTimeout(() => {
+            btn.classList.remove('btn-copy-success');
+            btn.classList.add('btn-copy');
+            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>';
+        }, 5000);
+
+
+    }
+</script>
+
+<script src="/javascript/images.js"></script>

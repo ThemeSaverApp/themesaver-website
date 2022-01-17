@@ -1,0 +1,56 @@
+<% layout('boilerplate.ejs') %>
+
+<div class='mx-auto my-auto container justify-content-center align-self-center'>
+    <div class="row">
+        <div class="col py-3">
+            <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="/icons/ThemeSaverLogo.png" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <form action='/register', method='post' class='validate' novalidate>
+                            <div class='mb-3'>
+                                <label for='email' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='email' name='email' aria-describedby='emailHelp' required>
+                                <!-- <div id='emailHelp' class='form-text'>I dont check if its real but if its fake i wont be able to contact u :(</div> -->
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please Enter A Valid Email Address 
+                                </div>                                
+                            </div>
+                            <div class='mb-3'>
+                                <label for='username' class='form-label'>Username</label>
+                                <input type='text' class='form-control' id='username', name='username' required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please Enter A Valid Username. It Cannot Be Blank
+                                </div>                                    
+                            </div>
+            
+                            <div class='mb-3'>
+                                <label for='password' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='password' name='password' required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please Enter A Valid Password. It Cannot Be Blank
+                                </div>                                    
+                            </div>
+                            <button type='submit' class='btn btn-primary' style='background-color: #F78914; border: 2px solid #F78914;'>Submit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/validation.js"></script>

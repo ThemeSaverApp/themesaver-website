@@ -1,0 +1,174 @@
+/* Setting Fonts */
+
+@font-face {
+    font-family: Cabin;
+    src: url(/fonts/Cabin/Cabin-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: Lobster;
+    src: url(/fonts/Lobster_Two/LobsterTwo-Regular.ttf);
+}
+
+@font-face {
+    font-family: MPLUSRounded1c;
+    src: url(/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf);
+}
+
+
+body {
+    background-color: white;
+    font-family: 'Cabin', sans-serif;
+}
+
+.navbar {
+    background-color: #F78914;
+    color: white;
+    font-family: 'MPLUSRounded1c', sans-serif;
+}
+
+.custom-footer {
+    background-color: #F78914;
+    color: white
+}
+
+.logo {
+    font-family: 'Lobster', cursive;
+}
+
+.icons {
+    color: white;
+}
+.icons:hover {
+    color: white;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+}
+
+.aboutText {
+    color: black;
+    text-decoration: none;
+    margin-top: 0.1em;
+}
+
+
+.btn-outline-light:hover {
+    background-color: #f8d7b3;
+}
+
+.card {
+    padding: 15px; /* JUST TO LOOK COOL */
+    border: 1px solid #eee;  /* JUST TO LOOK COOL */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+    transition: all .3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 19px 43px rgba(0, 0, 0, 0.22);
+    transform: translate3d(0px, -1px, 0px);
+}
+
+.dropdown-menu {
+    background-color: #F78914;
+}
+
+.dropdown-item {
+    color: white;
+    font-weight: 200;
+}
+
+.dropdown-item:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #F78914;
+}
+
+.code {
+    background-color: #F78914;
+    padding: 0.5em;
+    border-radius: 25px;
+}
+
+code {
+    color: white;
+}
+
+.btn-copy {
+    background-color: #F78914;
+    border: 0.1em solid;
+    color: #ffffff;
+}
+
+.btn-copy-success{
+    background-color: white;
+    border: 0.1em solid;
+    color: green;
+}
+
+.btn-copy-success:hover{
+    background-color: white;
+    border: 0.1em solid;
+    color: green;
+}
+
+
+
+.btn-copy:hover {
+    background-color: white;
+    color: #F78914;
+    border: 0.1em solid;
+
+}
+
+.btn:focus {
+    box-shadow:0 0 0 0rem;
+}
+
+.btn-submit {
+    background-color: #F78914;
+    color: white;
+    fill: white;
+    border: 0.5px;
+    border-radius: 10em;
+}
+
+.btn-submit:hover {
+    background-color: white;
+    color: #F78914;
+    fill: #F78914;;
+    border: solid 0.5px #F78914;
+    border-radius: 10em;
+}
+
+.back-btn {
+    color: white;
+}
+
+.delete-btn {
+    background-color: #F78914;
+    border-radius: 15em;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: white;
+    border-radius: 15em;
+    color: #F78914;
+    border: solid 0.1px #F78914;
+}
+
+.card-homepage {
+    background-color: white;
+    color: black;
+    font-size: 1em;
+}
+
+.card-title-homepage {
+    font-size: 1.4em;
+}
+
+a {
+    text-decoration: none;
+}

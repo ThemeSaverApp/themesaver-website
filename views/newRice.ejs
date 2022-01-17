@@ -1,0 +1,29 @@
+<% layout('boilerplate.ejs') %>
+
+<div class="container mt-3 mb-3">
+    <h1> Create A New Rice </h1>
+
+    <form action="/newRice" method="post"  class='validate' novalidate>
+
+      <div class="mb-3">
+        <label for="repoLink" class="form-label">Github Repo Link</label>
+        <input type="text" class="form-control" id="gtk" name='repoLink' required>
+        <div class="invalid-feedback">
+          Please Enter A Valid Name. It Cannot Be Blank
+        </div>
+
+        <div class="mb-3">
+          <label for="branch" class="form-label">Branch (Default: main)</label>
+          <input type="text" class="form-control" id="gtk" name='branch' required>
+          <div class="invalid-feedback">
+            Please Enter A Valid Name. It Cannot Be Blank
+          </div>   
+        </div>     
+      </div>
+      
+          <button class="btn btn-submit">Submit Rice</button>
+    </form>
+</div>
+
+<script src="/javascript/newrice.js"></script>
+<script src="/javascript/validation.js"></script>

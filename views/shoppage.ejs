@@ -1,0 +1,48 @@
+<% layout('boilerplate.ejs') %>
+
+<div class="container-fluid text-center py-3">
+    <div class="container h-100">
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+          <!-- <%= rices %>  -->
+    <% rices.forEach(rice => { %>
+                <div class="col h-100 d-inline-block mb-sm-3">
+                    <div class="card" >
+                        <div id="carousel-<%= rice._id %>-controls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" id='carousel-<%= rice.name %>'>  
+                    
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= rice._id %>-controls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= rice._id %>-controls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        <div class="card-body">
+                          <h5 class="card-title"><%= rice.name %> </h5>
+                          <hr>
+                          <p class="card-text mb-0 text-decoration-underline">
+                              <h5>Rice Details: </h5>
+                                <p class="mb-0"> Desktop Environment: <%= rice.desktopEnvironment %></p>
+                                <p>Window Manager: <%= rice.windowManager %></p> 
+
+                                <p class="text-muted">Submitted By: <a href="https://github.com/<%= rice.url %> " class="text-muted text-decoration-none"><%= rice.user.username %></a>  </p>
+                          </p>
+                          
+                          <a href="/shop/<%= rice._id %> " class="btn btn-submit">Know More</a>
+                        </div>
+                    </div>
+                </div>
+    <% }) %>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    var rice = '<%- JSON.stringify(rices) %>';
+    var single = false;
+</script>
+<script src="/javascript/images.js"></script>
