@@ -71,8 +71,6 @@ app.use(mongoSanitize());
 
 app.use(timeout('20s'))
 
-app.user()
-
 // Session/Cookies Config
 const sessionConfig = {
     secret: process.env.sessionSecret,
