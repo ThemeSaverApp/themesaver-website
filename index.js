@@ -28,6 +28,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 // Utils
 const expressError = require('./utils/catchAsync');
 
+const timeout = require('connect-timeout')
+
 dbUrl = process.env.dbUrl
 
 // Connecting mongoose to mongodb
@@ -67,6 +69,9 @@ app.use(
 
 app.use(mongoSanitize());
 
+app.use(timeout('20s'))
+
+app.user()
 
 // Session/Cookies Config
 const sessionConfig = {
@@ -102,6 +107,7 @@ app.use('/', rice)
 app.all('*', (req, res, next) => {
     next(new expressError('No Page Like That', 404))
 })
+
 
 // Error Middleware
 app.use((err, req, res, next) => {
