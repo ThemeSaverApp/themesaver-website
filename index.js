@@ -78,7 +78,7 @@ app.use(mongoSanitize());
 
 // Session/Cookies Config
 const sessionConfig = {
-    secret: 'thisshouldbeabettersecret!',
+    secret: process.env.sessionSecret,
     resave: false,
     saveUninitialized: true,
     cookie: {
