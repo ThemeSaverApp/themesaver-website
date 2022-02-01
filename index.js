@@ -71,7 +71,7 @@ app.use(
 
 app.use(mongoSanitize());
 
-app.use(timeout('20s'))
+app.use(timeout('15s'))
 
 // Session/Cookies Config
 const sessionConfig = {
