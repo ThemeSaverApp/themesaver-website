@@ -30,8 +30,8 @@ const expressError = require('./utils/catchAsync');
 
 const timeout = require('connect-timeout')
 
-// dbUrl = process.env.dbUrl
-dbUrl = 'mongodb://127.0.0.1:27017/themesaver'
+dbUrl = process.env.dbUrl
+// dbUrl = 'mongodb://127.0.0.1:27017/themesaver'
 
 // Connecting mongoose to mongodb
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
