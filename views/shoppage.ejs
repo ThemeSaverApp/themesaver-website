@@ -2,10 +2,47 @@
 
 <div class="container-fluid text-center py-3">
     <div class="container-fluid h-100">
-        <div class="row row-cols-1 row-cols-lg-3 row-cols-xl-4 row-cols-md-2 row-cols-sm-1 ">
-          <!-- <%= rices %>  -->
-    <% rices.forEach(rice => { %>
-                <div class="col h-100 d-inline-block mb-2">
+      <div class="row justify-content-end">
+        <div class="col-lg-4 col-md-6 mb-4"> 
+          <div class="row row-cols-3 g-3 align-items-center justify-content-end">
+            <div class="col">
+              <div class="input-group">
+                <input type="text" class="form-control" id="search-text" placeholder="Search For Rice">
+              </div>
+            </div>
+
+            <div class="col">
+              <select class="form-select" id='de' name='de' required>
+                <option value="" disabled selected hidden>Filter By DE</option>
+                <option value="none">All</option>
+                <option value="kde">KDE Plasma</option>
+                <option value="xfce">Xfce</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <select id="wm" class="form-select" name='wm' required>
+                <option value="" disabled selected hidden>Filter By WM</option>
+                <option value="none">All</option>
+                <option value="xfwm4">Xfwm4</option>
+                <option value="kwin">Kwin</option>
+                <option value="mutter">Mutter</option>
+                <option value="qtile">Qtile</option>
+                <option value="awesome">Awesome</option>
+                <option value="i3">i3</option>
+              </select>
+            </div>            
+              <!-- <button type="submit" class="btn btn-submit" id="search-btn"> <i class="bi bi-search"></i> </button>
+               -->
+
+          </div>
+            
+
+        </div>
+      </div>
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-xl-4 row-cols-md-2 row-cols-sm-1 " id='AllRice'>
+    <% rices.forEach(rice => { %> 
+                <div class="col h-100 d-inline-block mb-2" id="<%= rice.name %>">
                     <div class="card" >
                         <div id="carousel-<%= rice._id %>-controls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner" id='carousel-<%= rice.name %>'>  
@@ -46,3 +83,12 @@
     var single = false;
 </script>
 <script src="/javascript/images.js"></script>
+<script src="/javascript/search.js"></script>
+
+<!-- 
+        <div class="row d-flex align-items-top justify-content-start">
+        <div class="col-1" >
+            <h4>Shop</h4>
+        </div>
+        <div class="col"></div>
+ -->

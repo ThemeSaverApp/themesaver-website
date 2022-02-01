@@ -15,37 +15,79 @@
     src: url(/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf);
 }
 
+/* CSS Variables */
+
+:root {
+    --bg: #ffffff;
+    --fg: #F78914;
+    --text-color: #ffffff;
+}
 
 body {
-    background-color: white;
+    background-color: var(--bg);
     font-family: 'Cabin', sans-serif;
 }
 
-.navbar {
-    background-color: #F78914;
-    color: white;
-    font-family: 'MPLUSRounded1c', sans-serif;
-}
+/* Navbar */
 
-.custom-footer {
-    background-color: #F78914;
-    color: white
+.navbar {
+    background-color: var(--fg);
+    color: var(--text-color);
+    font-family: 'MPLUSRounded1c', sans-serif;
 }
 
 .logo {
     font-family: 'Lobster', cursive;
 }
 
-.icons {
-    color: white;
+#navbar-brand {
+    color: var(--text-color);
 }
-.icons:hover {
-    color: white;
+
+#nav-link {
+    color: var(--text-color);
 }
+
 
 .nav-link:hover {
     font-weight: bold;
 }
+
+/* Navbar User Menu Dropdown */
+
+.dropdown-menu {
+    background-color: var(--fg);
+}
+
+.dropdown-item {
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.dropdown-item:hover {
+    color: var(--text-color);
+    font-weight: bold;
+    background-color: var(--fg);
+}
+
+
+/* Footer */
+
+.custom-footer {
+    background-color: var(--fg);
+    color: var(--text-color)
+}
+
+.icons {
+    color: var(--text-color);
+    background-color: var(--fg);
+    border: 0px solid var(--fg);
+}
+.icons:hover {
+    color: var(--text-color);
+}
+
+/* About Page */
 
 .aboutText {
     color: black;
@@ -53,52 +95,37 @@ body {
     margin-top: 0.1em;
 }
 
-
-.btn-outline-light:hover {
-    background-color: #f8d7b3;
-}
-
 .card {
-    padding: 15px; /* JUST TO LOOK COOL */
-    border: 1px solid #eee;  /* JUST TO LOOK COOL */
+    padding: 15px;
+    background-color: var(--fg);
+    color: var(--text-color);
+    border: 1px solid var(--bg);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
     transition: all .3s ease-in-out;
 }
 
 .card:hover {
+    background-color: var(--fg);
     box-shadow: 0px 19px 43px rgba(0, 0, 0, 0.22);
     transform: translate3d(0px, -1px, 0px);
 }
 
-.dropdown-menu {
-    background-color: #F78914;
-}
-
-.dropdown-item {
-    color: white;
-    font-weight: 200;
-}
-
-.dropdown-item:hover {
-    color: white;
-    font-weight: bold;
-    background-color: #F78914;
-}
+/* Code And Copy Button */
 
 .code {
-    background-color: #F78914;
+    background-color: var(--fg);
     padding: 0.5em;
     border-radius: 25px;
 }
 
 code {
-    color: white;
+    color: var(--text-color);
 }
 
 .btn-copy {
-    background-color: #F78914;
+    background-color: var(--fg);
     border: 0.1em solid;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .btn-copy-success{
@@ -113,11 +140,9 @@ code {
     color: green;
 }
 
-
-
 .btn-copy:hover {
     background-color: white;
-    color: #F78914;
+    color: var(--fg);
     border: 0.1em solid;
 
 }
@@ -127,41 +152,40 @@ code {
 }
 
 .btn-submit {
-    background-color: #F78914;
-    color: white;
-    fill: white;
-    border: 0.5px;
+    background-color: var(--fg);
+    color: var(--text-color);
+    fill: var(--text-color);
+    border: 0.5px solid var(--text-color);
     border-radius: 10em;
 }
 
 .btn-submit:hover {
     background-color: white;
-    color: #F78914;
-    fill: #F78914;;
-    border: solid 0.5px #F78914;
+    color: var(--fg);
+    fill: var(--fg);;
+    border: solid 0.5px var(--fg);
     border-radius: 10em;
 }
 
 .back-btn {
-    color: white;
+    color: var(--text-color);
 }
 
 .delete-btn {
-    background-color: #F78914;
+    background-color: var(--fg);
     border-radius: 15em;
-    color: white;
+    color: var(--text-color);
 }
 
 .delete-btn:hover {
     background-color: white;
     border-radius: 15em;
-    color: #F78914;
-    border: solid 0.1px #F78914;
+    color: var(--fg);
+    border: solid 0.1px var(--fg);
 }
 
 .card-homepage {
-    background-color: white;
-    color: black;
+    color: var(--text-color);
     font-size: 1em;
 }
 
@@ -171,4 +195,55 @@ code {
 
 a {
     text-decoration: none;
+}
+
+.shopText {
+    font-family: MPLUSRounded1c;
+}
+
+/* Modal */
+
+.modal-header {
+    background-color: var(--fg);
+    color: var(--text-color);
+}
+
+.modal-body {
+    background-color: var(--fg);
+    color: var(--text-color); 
+}
+
+.btn-og {
+    background-color: #F78914;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-dracula {
+    background-color: #bd93f9;
+    border: 1px solid #f8f8f2;
+    color: #f8f8f2;
+}
+
+.btn-gruvbox {
+    background-color: #d79921;
+    border: 1px solid #fbf1c7;
+    color: #fbf1c7;
+}
+
+.btn-nord {
+    background-color: #88C0D0;
+    border: 1px solid #D8DEE9;
+    color: #D8DEE9;
+}
+
+.rice-details-header {
+    color: var(--text-color);
+}
+
+.modal-header {
+    border-bottom: 0px; 
+    border: 5px solid var(--fg);
+    /* border-radius: 10px; */
+    /* background-color: var(--bg); */
 }

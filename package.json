@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap-icons": "^1.7.2",
     "browser-sync": "^2.27.7",
     "connect-flash": "^0.1.1",
     "connect-timeout": "^1.9.0",

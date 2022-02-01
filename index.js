@@ -30,7 +30,8 @@ const expressError = require('./utils/catchAsync');
 
 const timeout = require('connect-timeout')
 
-dbUrl = process.env.dbUrl
+// dbUrl = process.env.dbUrl
+dbUrl = 'mongodb://127.0.0.1:27017/themesaver'
 
 // Connecting mongoose to mongodb
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -45,6 +46,7 @@ mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 // Express Configuration
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'node_modules/bootstrap-icons')))
 app.set('view engine', 'ejs')
 app.engine('ejs', ejsMate)
 app.use(express.urlencoded({ extended: true }));
@@ -91,7 +93,8 @@ app.use(passport.session())
 
 app.use((req, res, next) => {
     // console.log(req.originalUrl)
-    res.locals.currentUser = req.user
+    res.locals.currentUser = req.user;
+    // res.locals.theme = localStorage.getItem('colorScheme');
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
