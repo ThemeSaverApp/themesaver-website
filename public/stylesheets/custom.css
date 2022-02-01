@@ -115,6 +115,7 @@ body {
 .code {
     background-color: var(--fg);
     padding: 0.5em;
+    border: 2.5px solid var(--bg);
     border-radius: 25px;
 }
 
