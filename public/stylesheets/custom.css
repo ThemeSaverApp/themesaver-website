@@ -115,6 +115,7 @@ body {
 .code {
     background-color: var(--fg);
     padding: 0.5em;
+    border: 2.5px solid var(--bg);
     border-radius: 25px;
 }
 
@@ -173,6 +174,7 @@ code {
 
 .delete-btn {
     background-color: var(--fg);
+    border: 2px solid var(--bg);
     border-radius: 15em;
     color: var(--text-color);
 }
@@ -239,6 +241,9 @@ a {
 
 .rice-details-header {
     color: var(--text-color);
+    background-color: var(--fg);
+    border: 00.2em solid var(--fg);
+    border-radius: 10em;
 }
 
 .modal-header {
