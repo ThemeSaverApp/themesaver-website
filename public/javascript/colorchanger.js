@@ -6,6 +6,7 @@ var setIcon = (iconTheme) => {
     for (img of document.getElementsByClassName("themesaver-logo")) {
         img.src = `/icons/ThemeSaverLogo-${iconTheme}.png`
     }    
+    document.getElementById('favicon').setAttribute('href', `/icons/ThemeSaverLogo-${iconTheme}.png`)
 }
 
 var nord = () => {
