@@ -44,9 +44,9 @@
     <% rices.forEach(rice => { %> 
                 <div class="col h-100 d-inline-block mb-2" id="<%= rice.name %>">
                     <div class="card" >
-                        <div id="carousel-<%= rice._id %>-controls" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carousel-<%= rice._id %>-controls" class="carousel slide" >
                             <div class="carousel-inner" id='carousel-<%= rice.name %>'>  
-                    
+                              <!-- Screenshots go here -->
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= rice._id %>-controls" data-bs-slide="prev">
                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

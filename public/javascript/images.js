@@ -10,8 +10,13 @@ const generateCarousel = async (rice, carousel) => {
         var img = document.createElement('img');
         img.src = `https://github.com/${rice.url}/blob/${rice.branch}/Screenshots/${screenshot}?raw=true`
         img.classList.add('d-block')
-        img.classList.add('w-100')
-        img.classList.add('h-100')
+        if (single !== true) {
+            img.classList.add('shop-screenshots')
+        }
+        else {
+            img.classList.add('w-100')
+            img.classList.add('h-100')
+        }
         div.appendChild(img)
         carousel.appendChild(div)  
     });

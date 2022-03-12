@@ -252,3 +252,9 @@ a {
     /* border-radius: 10px; */
     /* background-color: var(--bg); */
 }
+
+.shop-screenshots {
+    width: 100%;
+    height: 27.5vh;
+    object-fit: fill;
+}
